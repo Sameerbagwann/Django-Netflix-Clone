@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<main>
+
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playback</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assests/style.css' %}" />
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-blue-900 text-white" style="background-color: #181818;">
+
+
+<!-- Main Content -->
+<div class="container mx-auto mt-10">
+    <!-- Movie Title and Back Button -->
+<div class="flex items-center justify-between">
+    <h2 class="text-3xl font-semibold">{{movie_details.title}}</h2>
+<a href="/" class="text-gray-400 hover:text-white">← Back to movies</a>
+</div>
+
+<div class="mt-8">
+    <video class="w-full h-auto" preload controls>
+        <source src="{{movie_details.video.url}}" type="video/mp4">
+        <button id="seekButton">Seek to 10 seconds</button>
+</video>
+
+<!-- Movie Description -->
+<div class="mt-6">
+    <h3 class="text-xl font-semibold mb-2">{{movie_details.title}}</h3>
+<p>
+    {{movie_details.description}}
+</p>
+</div>
+&nbsp; &nbsp;&nbsp; 
+&nbsp; 
+        &nbsp; 
+        &nbsp; 
+
+        &nbsp; 
+        
+        &nbsp; 
+    
+    &nbsp; 
+</div>
+
+</body>
+
+
+</html>
+</main>
+{% endblock 'main' %}
